@@ -1,3 +1,4 @@
+//Funções de Mouse
 function mouseCima(){
     document.getElementById("teste").innerHTML = "Mouse Em Cima";
     document.getElementById("teste").style.color = "green";
