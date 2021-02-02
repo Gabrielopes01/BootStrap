@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
     <!--Chamando o CSS do BootStrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!--Chamando o CSS-->
     <link rel="stylesheet" href="css/styles.css">
 
@@ -31,10 +31,204 @@
 </head>
 <body>
 
-    <!--Testando se o documento esta conectado com o JS e o CSS-->
-    <h1 onmouseover="mouseCima()" onmouseout="mouseFora()" onmousewheel="rolando()" onclick="clicou()" ondblclick="duploClique()" id="teste">Teste</h1>
+    <!--Cabeçalho-->
+    <header>
+        <div class="container" id="nav-container">
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <a href="#" class="navbar-brand">
+                    <img id="logo" src="https://pngimg.com/uploads/Half-Life/Half-Life_PNG76.png" alt="logo"> Valve
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="colapse" data-target="#navbar-links" 
+                aria-controls="navbar-links" aria-expanded="false" arial-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" id="home-menu">Home</a>
+                        <a class="nav-item nav-link" id="about-menu">A Empresa</a>
+                        <a class="nav-item nav-link" id="services-menu">Jogos</a>
+                        <a class="nav-item nav-link" id="team-menu">Equipe</a>
+                        <a class="nav-item nav-link" id="portifolio-menu">Steam</a>
+                        <a class="nav-item nav-link" id="contact-menu">Contato</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!--Corpo Principal-->
+    <main>
+        <!--Container que enche a tela toda-->
+        <div class="container-fluid">
+
+            <!--Slider Principal em forma de Carrossel-->
+            <div id="mainSlider" class="carousel slide" data-bs-ride="carousel">
+                <!--Indicadores do Slider de Carrossel-->
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#mainSlider" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#mainSlider" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#mainSlider" data-bs-slide-to="2"></li>
+                </ol>
+                <!--Parte Interna do Carrossel-->
+                <div class="carousel-inner">
+                    <!--Imagens do Carrossel-->
+                    <div class="carousel-item active">
+                        <img src="https://sm.ign.com/ign_br/screenshot/default/half-life_vxrs.jpg" class="d-block w-100" alt="Half Life"> 
+                        <!--Texto do Carrossel-->
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2>Half Life</h2>
+                            <p>Jogue agora um marcos dos videogames</p>
+                            <a href="#" class="main-btn">Comprar</a>
+                        </div>
+                    </div>
+                    
+
+                    <!--Imagens do Carrossel-->
+                    <div class="carousel-item">
+                        <img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2017/02/portal-2-coop-hug-1210x544.jpg" class="d-block w-100" alt="Portal"> 
+                        <!--Texto do Carrossel-->
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2>Portal</h2>
+                            <p>Pronto para um desafio?</p>
+                            <a href="#" class="main-btn">Comprar</a>
+                        </div>
+                    </div>
+                    
+
+                    <!--Imagens do Carrossel-->
+                    <div class="carousel-item">
+                        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/500/capsule_616x353.jpg?t=1587582567" class="d-block w-100" alt="Left 4 Dead"> 
+                        <!--Texto do Carrossel-->
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2>Left 4 Dead</h2>
+                            <p>Tente Sobreviver</p>
+                            <a href="#" class="main-btn">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Seta para Anterior-->
+                <a href="#mainSlider" class="carousel-control-prev" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </a>
+
+                <!--Seta para Próximo-->
+                <a href="#mainSlider" class="carousel-control-next" role="button" data-bs-slide="next">
+                    <span class="visually-hidden">Próximo</span>
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <!--Area de Informação-->
+            <div id="about-area">
+                <div class="container">
+                    <div class="row">
+                        <!--Area para Desktop-->
+                        <div class="col-12">
+                            <h3 class="main-title">Sobre a Valve</h3> 
+                            <hr class="divisor">
+                            <br>
+                        </div>
+                        <div class="col-md-6">
+                            <img class="img-fluid" src="https://www.oficinadanet.com.br/imagens/post/25142/valve-logo_750x469_5c8fde3689ef4.jpg" alt="Empresa Valve">
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class="about-title">A Maior Empresa de Jogos para Computadores</h3>
+                            <p>Steam - Milhares de jogos online</p>
+                            <p>Valve - Venha conferir nossos jogos</p>
+                            <p>Os Melhores Preços e Promoções</p>
+                            <p>Nossos Jogos:</p>
+                            <ul id="about-list">
+                                <li><i class="fas fa-gamepad"></i> Half Life</li>
+                                <li><i class="fas fa-gamepad"></i> Portal</li>
+                                <li><i class="fas fa-gamepad"></i> Left 4 Dead</li>
+                                <li><i class="fas fa-gamepad"></i> Counter Strike</li>
+                                <li><i class="fas fa-gamepad"></i> Team Fortress</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!--Serviçoas da Empresa-->
+            <div id="service-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="main-title">Por Que a Valve?</h3> 
+                            <hr class="divisor">
+                            <br>
+                        </div>
+                        <div class="col-md-4 service-box waves-effect waves-light">
+                            <i class="fas fa-desktop"></i>
+                            <h4>Computadores</h4>
+                            <p>Aproveite os melhores jogos com o maior potencial que eles podem atingir</p>
+                        </div>
+                        <div class="col-md-4 service-box">
+                            <i class="fas fa-dollar-sign"></i>
+                            <h4>Preços</h4>
+                            <p>Temos os melhores preços do mercado de jogos em Desktop</p>
+                        </div>
+                        <div class="col-md-4 service-box">
+                            <i class="fas fa-tags"></i>
+                            <h4>Descontos</h4>
+                            <p>Diversas ofertas e descontos em jogos a todo o momento</p>
+                        </div>
+                        <div class="col-md-4 service-box">
+                            <i class="fas fa-clipboard-list"></i>
+                            <h4>Variedade</h4>
+                            <p>Uma variedade enorme de jogos em nosso catálogo</p>
+                        </div>
+                        <div class="col-md-4 service-box">
+                            <i class="fas fa-gamepad"></i>
+                            <h4>Retro</h4>
+                            <p>Aproveite os melhores jogos de sua época, temos diversos títulos retro</p>
+                        </div>
+                        <div class="col-md-4 service-box">
+                            <i class="fas fa-coffee"></i>
+                            <h4>Simplicidade</h4>
+                            <p>É muito fácil criar sua conta e começar a jogar agora mesmo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Dados da Empresa-->
+            <div id="data-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 circle box">
+                            <div id="circleA"></div>
+                            <p>Jogos Produzidos</p>
+                        </div>
+                        <div class="col-md-3 circle box">
+                            <div id="circleB"></div>
+                            <p>Usuários Registrados</p>
+                        </div>
+                        <div class="col-md-3 circle box">
+                            <div id="circleC"></div>
+                            <p>Jogos Vendidos</p>
+                        </div>
+                        <div class="col-md-3 circle box">
+                            <div id="circleD"></div>
+                            <p>Ofertas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
+            <br>
+            <br>
+            <br>
+            <br>
+
+
+        </div>
+    </main>
 
     <!--Chamando o JavaScript-->
     <script src="js/scripts.js"></script>

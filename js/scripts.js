@@ -1,31 +1,122 @@
-//Funções de Mouse
-function mouseCima(){
-    document.getElementById("teste").innerHTML = "Mouse Em Cima";
-    document.getElementById("teste").style.color = "green";
-}
+//Executa quando iniciar o documento
+$(document).ready(function() {
 
-function mouseFora(){
-    document.getElementById("teste").innerHTML = "Mouse Fora";
-    document.getElementById("teste").style.color = "red";
-}
+    //Progress Bar
+    let containerA = document.getElementById("circleA");
 
-function rolando(){
-    document.getElementById("teste").innerHTML = "Scroll";
-    document.getElementById("teste").style.color = "purple";
-}
+    let circleA = new ProgressBar.Circle(containerA, {
+        
+        color: '#64DAF9',
+        strokeWidth: 8,
+        duration: 1000,
+        from: { color: '#AAA' },
+        to: { color: '#64DAF9'},
 
-function clicou(){
-    document.getElementById("teste").innerHTML = "Clicou";
-    document.getElementById("teste").style.color = "pink";
-}
+        step: function(state, circle){
+            
+            circle.path.setAttribute('stroke', state.color);
 
-function duploClique(){
-    document.getElementById("teste").innerHTML = "Duplo Clique";
-    document.getElementById("teste").style.color = "yellow";
-}
+            let value = Math.round(circle.value() * 40);
 
-//Este even to diz que quando você der um clique com o botão direito na janela, você recebera um alerta
-window.oncontextmenu = function () {
-    document.getElementById("teste").innerHTML = "Botão Direito";
-    document.getElementById("teste").style.color = "grey";
-}
+            circle.setText(value);
+
+        }
+
+    });
+
+    let containerB = document.getElementById("circleB");
+
+    let circleB = new ProgressBar.Circle(containerB, {
+        
+        color: '#64DAF9',
+        strokeWidth: 8,
+        duration: 1900,
+        from: { color: '#AAA' },
+        to: { color: '#64DAF9'},
+
+        step: function(state, circle){
+            
+            circle.path.setAttribute('stroke', state.color);
+
+            let value = Math.round(circle.value() * 10000);
+
+            circle.setText(value);
+
+        }
+
+    });
+
+    let containerC = document.getElementById("circleC");
+
+    let circleC = new ProgressBar.Circle(containerC, {
+        
+        color: '#64DAF9',
+        strokeWidth: 8,
+        duration: 2100,
+        from: { color: '#AAA' },
+        to: { color: '#64DAF9'},
+
+        step: function(state, circle){
+            
+            circle.path.setAttribute('stroke', state.color);
+
+            let value = Math.round(circle.value() * 100000);
+
+            circle.setText(value);
+
+        }
+
+    });
+
+    let containerD = document.getElementById("circleD");
+
+    let circleD = new ProgressBar.Circle(containerD, {
+        
+        color: '#64DAF9',
+        strokeWidth: 8,
+        duration: 1400,
+        from: { color: '#AAA' },
+        to: { color: '#64DAF9'},
+
+        step: function(state, circle){
+            
+            circle.path.setAttribute('stroke', state.color);
+
+            let value = Math.round(circle.value() * 900);
+
+            circle.setText(value);
+
+        }
+
+    });
+
+    //Iniciando a animação quando o usuário chegar em certa parte da pagina
+    let dataAreaOffset = $('#data-area').offset();
+    let stop = 0;
+
+    $(window).scroll(function(e) {
+        
+        let scroll = $(window).scrollTop();
+
+        if (scroll > (dataAreaOffset.top - 500) && stop == 0){
+
+            circleA.animate(1.0);
+            circleB.animate(1.0);
+            circleC.animate(1.0);
+            circleD.animate(1.0);
+
+            stop = 1;
+        }
+
+    });
+
+
+    //Parallax
+    setTimeout(function() {
+
+        $('#data-area').parallax({imageSrc: 'https://wallpapercave.com/wp/wp1915608.jpg'});
+
+    }, 250);
+
+
+});
