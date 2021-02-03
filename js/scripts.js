@@ -115,8 +115,47 @@ $(document).ready(function() {
     setTimeout(function() {
 
         $('#data-area').parallax({imageSrc: 'https://wallpapercave.com/wp/wp1915608.jpg'});
+        $('#apply-area').parallax({imageSrc: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e4d8c950-fd98-4d0c-ae4c-299a79a85972/da0fs9m-5b437ba0-4b55-47d4-8249-87756238bb4d.jpg/v1/fill/w_1192,h_670,q_70,strp/steam_valve_background_4_by_ragnarthedane_da0fs9m-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xMDgwIiwicGF0aCI6IlwvZlwvZTRkOGM5NTAtZmQ5OC00ZDBjLWFlNGMtMjk5YTc5YTg1OTcyXC9kYTBmczltLTViNDM3YmEwLTRiNTUtNDdkNC04MjQ5LTg3NzU2MjM4YmI0ZC5qcGciLCJ3aWR0aCI6Ijw9MTkyMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.QzTmdgRp8qUltl_-CK4UttWEdaivzfjK38SMV09GJIw'});
 
     }, 250);
 
+
+    //Filtro do Portifolio
+
+    $('.filter-btn').on('click', function() {
+
+        let type = $(this).attr('id');
+        let boxes = $('.project-box');
+
+        $('.main-btn').removeClass('active');
+        $(this).addClass('active'); 
+
+        if (type == 'valve-btn') {
+            eachBoxes('valve', boxes);
+        } else if (type == 'mojang-btn') {
+            eachBoxes('mojang', boxes);
+        } else if (type == 'nintendo-btn'){
+            eachBoxes('nintendo', boxes);
+        } else {
+            eachBoxes('all', boxes);
+        }
+
+
+    });
+
+    function eachBoxes(type, boxes){
+        if(type == 'all') {
+            $(boxes).fadeIn();
+        } else {
+            $(boxes).each(function() {
+                if(!$(this).hasClass(type)) {
+                    $(this).fadeOut('slow');
+                } else {
+                    $(this).fadeIn();
+                }
+            });
+        }
+
+    }
 
 });
